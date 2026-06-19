@@ -8,7 +8,7 @@ import { RegistroRequest } from '../models/registro-request.interface';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8080/api/auth';
+  private readonly apiUrl = 'https://sistema-encuestas-backend.onrender.com/api/auth';
 
   login(data: LoginRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, data).pipe(

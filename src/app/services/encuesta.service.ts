@@ -9,7 +9,7 @@ import { OpcionRequest } from '../models/opcion-request.interface';
 @Injectable({ providedIn: 'root' })
 export class EncuestaService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8080/api/encuestas';
+  private readonly apiUrl = 'https://sistema-encuestas-backend.onrender.com/api/encuestas';
 
   listar(estado?: string): Observable<Encuesta[]> {
     const params = estado ? `?estado=${estado}` : '';

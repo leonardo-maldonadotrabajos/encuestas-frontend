@@ -7,7 +7,7 @@ import { Resultado } from '../models/resultado.interface';
 @Injectable({ providedIn: 'root' })
 export class VotoService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8080/api/encuestas';
+  private readonly apiUrl = 'https://sistema-encuestas-backend.onrender.com/api/encuestas';
 
   votar(encuestaId: string, data: VotoRequest): Observable<any> {
     return this.http.post(`${this.apiUrl}/${encuestaId}/votar`, data);
